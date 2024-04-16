@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Friendly Navbar</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <a href="../index.html" class="logo-link">
+        <img height="40" src="../assets/logo.svg" alt="Logo" />
+      </a>
+
+      <div>
+        <!-- Hidden in web view, needed for mobile -->
+        <label for="toggle" class="material-icons">menu</label>
+        <input type="checkbox" id="toggle" />
+
+        <!-- The actual menu -->
+        <ul id="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1>Services Page</h1>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+        <div class="social-links">
+          <a href="#" class="material-icons">share</a>
+          <a href="#" class="material-icons">public</a>
+          <a href="#" class="material-icons">group</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
