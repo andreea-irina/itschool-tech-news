@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* Color pallete */
+  --blue-100: #395ca7;
+  --orange-100: #fca311;
+  --orange-50: #fdb849;
+  --white-100: #f9f9f9;
+  --white-50: #f2f2f2;
+  --white-10: #e5e5e5;
+  --black-100: #05080f;
+  --black-50: #0a111e;
+  --black-10: #0f192e;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navigarea */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  height: 60px;
+  padding: 10px 10%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  border-bottom: 1px solid var(--white-10);
+  color: var(--black-50);
+}
+
+#navbar label {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#navbar input[type="checkbox"] {
+  display: none;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#navbar ul li {
+  padding: 8px 12px;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: var(--black-50);
+}
+
+#navbar ul li a:hover {
+  color: var(--orange-100);
+}
+
+/* Continutul paginii */
+.container {
+  flex-grow: 1;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.container .banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.container .main-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Stilizare card-uri in general */
+.container .card {
+  min-width: 250px;
+  max-width: 100%;
+  background-color: var(--white-50);
+  border: none;
+}
+
+.container .card-title {
+  color: var(--blue-100);
+}
+
+.container .card .card-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.container .card-text {
+  color: var(--black-50);
+}
+
+.container .btn-primary {
+  background-color: var(--black-10);
+  border-color: var(--black-10);
+}
+
+.container .btn-primary:hover {
+  background-color: var(--blue-100);
+  border-color: var(--blue-100);
+}
+
+.container .card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+.container .featured-articles {
+  /* Pozitionam sectiunea de 'Featured Articles' sa ramana in pagina cand dam scroll */
+  position: sticky;
+  /* 60px inaltimea header-ului + 24px spatiu intre header si sectiune */
+  top: 84px;
+  margin-top: 24px;
+}
+
+.container .featured-articles h3 {
+  color: var(--black-10);
+}
+
+/* Stilizare card-uri din 'Featured Articles' */
+.container .card.featured-card {
+  min-width: 100px;
+  padding: 4 16px;
+}
+
+/* Stilizarea sectiunii de 'Testimonials' */
+.testimonials {
+  margin-top: 48px;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: var(--white-100);
+}
+
+.testimonials .testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.testimonials .testimonial-card {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  background-color: var(--white-50);
+}
+
+.testimonials .testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonials .testimonial-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.testimonials .testimonial-card p {
+  flex-grow: 1;
+  font-style: italic;
+  color: var(--black-50);
+}
+
+.testimonials .testimonial-card h6 {
+  margin-top: 10px;
+  color: var(--blue-100);
+}
+
+/* Stilizarea sectiunii de 'FAQ' */
+.faq {
+  margin: 48px 0;
+}
+
+/* Footer-ul */
+#footer {
+  background-color: var(--black-10);
+  color: var(--white-100);
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer p {
+  margin: 10px 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+}
+
+.social-links a {
+  color: var(--white-100);
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.social-links a:hover {
+  color: var(--orange-100);
+}
+
+/* Functionalitate de mobil */
+@media (max-width: 600px) {
+  #navbar ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #navbar ul li {
+    text-align: center;
+    border-top: 1px solid var(--white-50);
+  }
+
+  #navbar label {
+    display: block;
+  }
+
+  #toggle:checked + #menu {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    background-color: white;
+  }
+}
