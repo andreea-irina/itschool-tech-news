@@ -1,0 +1,123 @@
+:root {
+    --white-100: #beb8b8;
+    --white-50: #f2f2f2;
+    --white-10: #e5e5e5;
+    --black-100: #000000; 
+    --black-90: #222222; 
+    --black-80: #313030; 
+    --green-100: #036d13;
+    --curve: 40;
+}
+  
+* { 
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+.card {
+    position: relative;
+    height: 480px;
+    width: 370px;  
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    padding: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+  
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    border-radius: calc(var(--curve) * 1px);       
+    background-color: var(--green-100);
+    cursor: pointer;
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+}
+  
+.card:hover .card-overlay {
+    transform: translateY(0);
+}
+  
+.card-front {
+    position: relative;
+    padding: 3px;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--white-100);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+}
+
+  
+.card-arcRight {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;   
+    z-index: 1;
+}
+  
+.card-arcRight path {
+    fill: var(--white-100);
+}      
+
+.card:hover .card-front {
+    transform: translateY(0);
+}
+  
+.card-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.photo-container{
+    width: 80px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-profilePhoto {
+
+    width: 50px;
+    height: 50px;      
+    border-radius: 50%;  
+    border: 1px solid var(--black-100);
+    cursor:grabbing;
+}
+
+.cardUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-userName {
+    font-weight: bolder;
+    margin: 0px;
+    font-size: 1.2em;
+    color: var(--black-80);
+}
+
+.card-details {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: var(--green-100);
+}
+  
+.card-description {
+    padding: 20px;
+    color: var(--white-10);
+    text-align: justify;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}    
